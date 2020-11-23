@@ -236,9 +236,412 @@
         </aside>
       </div>
     </main>
-    <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-      defer
-    ></script>
+
+    <script>
+      const userMenuItems = [
+        {
+          id: 'um0',
+          text: 'Ultime Notitie',
+          link: 'http://news.abc24.it/',
+        },
+        {
+          id: 'um1',
+          text: 'Guadagna con noi',
+          link: 'http://news.abc24.it/guadagnaonline-adsense-sharing.html',
+        },
+        {
+          id: 'um2',
+          text: 'Inserisci Notitia',
+          link: 'http://news.abc24.it/inserisci/notizia.html',
+          path: 'notizia.html',
+        },
+        {
+          id: 'um3',
+          text: 'Login',
+          link: 'http://news.abc24.it/login-form',
+          path: 'login-form',
+        },
+      ]
+      const menuItems = [
+        {
+          id: '1',
+          text: 'Home',
+          link: 'http://news.abc24.it/',
+          path: '',
+          open: false,
+          submenuItems: [
+            {
+              id: '1s1',
+              text: 'Guadagna con noi',
+              link: 'http://news.abc24.it/guadagnaonline-adsense-sharing.html',
+              path: 'guadagnaonline-adsense-sharing.html',
+            },
+            {
+              id: '1s2',
+              text: 'Inserisci Notitia',
+              link: 'http://news.abc24.it/inserisci/notizia.html',
+              path: 'notizia.html',
+            },
+            {
+              id: '1s3',
+              text: 'Registrati',
+              link: 'http://news.abc24.it/register/',
+              path: 'register',
+            },
+            {
+              id: '1s4',
+              text: 'Login',
+              link: 'http://news.abc24.it/login-form/',
+              path: 'login-form',
+            },
+          ],
+        },
+        {
+          id: '2',
+          text: 'Attualità',
+          link: 'http://news.abc24.it/notizie/attualita',
+          path: 'attualita',
+          open: false,
+          submenuItems: [
+            {
+              id: '2s1',
+              text: 'Estero',
+              link: 'http://news.abc24.it/notizie/attualita-estero',
+              path: 'attualita-estero',
+            },
+            {
+              id: '2s2',
+              text: 'Italia',
+              link: 'http://news.abc24.it/notizie/attualita-italia',
+              path: 'attualita-italia',
+            },
+          ],
+        },
+        {
+          id: '3',
+          text: 'Cultura e Societa',
+          link: 'http://news.abc24.it/notizie/cultura-e-societa',
+          path: 'cultura-e-societa',
+          open: false,
+          submenuItems: [
+            {
+              id: '3s1',
+              text: 'Gossip',
+              link: 'http://news.abc24.it/notizie/gossip',
+              path: 'gossip',
+            },
+            {
+              id: '3s2',
+              text: 'Letteratura',
+              link: 'http://news.abc24.it/notizie/letteratura',
+              path: 'letteratura',
+            },
+            {
+              id: '3s3',
+              text: 'Religione',
+              link: 'http://news.abc24.it/notizie/religione',
+              path: 'religione',
+            },
+          ],
+        },
+        {
+          id: '4',
+          text: 'Economia',
+          link: 'http://news.abc24.it/notizie/economia-lavoro',
+          path: 'economia-lavoro',
+          open: false,
+          submenuItems: [
+            {
+              id: '4s1',
+              text: 'Economia',
+              link: 'http://news.abc24.it/notizie/economia',
+              path: 'economia',
+            },
+            {
+              id: '4s2',
+              text: 'Finanza',
+              link: 'http://news.abc24.it/notizie/finanza',
+              path: 'finanza',
+            },
+            {
+              id: '4s3',
+              text: 'Finanziamenti e Prestiti',
+              link: 'http://news.abc24.it/notizie/finanziamenti-prestiti',
+              path: 'finanziamenti-prestiti',
+            },
+            {
+              id: '4s4',
+              text: 'Lavoro',
+              link: 'http://news.abc24.it/notizie/lavoro',
+              path: 'lavoro',
+            },
+          ],
+        },
+        {
+          id: '5',
+          text: 'Intrattenimento',
+          link: 'http://news.abc24.it/notizie/intrattenimento',
+
+          path: 'intrattenimento',
+          open: false,
+          submenuItems: [
+            {
+              id: '5s1',
+              text: 'Musica',
+              link: 'http://news.abc24.it/notizie/musica',
+              path: 'musica',
+            },
+            {
+              id: '5s2',
+              text: 'Cinema',
+              link: 'http://news.abc24.it/notizie/cinema',
+              path: 'cinema',
+            },
+            {
+              id: '5s3',
+              text: 'Fumetti e Cartoni Animati',
+              link: 'http://news.abc24.it/notizie/fumetti-e-cartoni-animati',
+              path: 'fumetti-e-cartoni-animati',
+            },
+            {
+              id: '5s4',
+              text: 'Giochi',
+              link: 'http://news.abc24.it/notizie/giochi',
+              path: 'giochi',
+            },
+            {
+              id: '5s5',
+              text: 'Radio TV',
+              link: 'http://news.abc24.it/notizie/radio-tv',
+              path: 'radio-tv',
+            },
+            {
+              id: '5s6',
+              text: 'Videogame',
+              link: 'http://news.abc24.it/notizie/videogame',
+              path: 'videogame',
+            },
+          ],
+        },
+        {
+          id: '6',
+          text: 'Medicina e Salute',
+          link: 'http://news.abc24.it/notizie/medicina-e-salute',
+
+          path: 'medicina-e-salute',
+          open: false,
+          submenuItems: [
+            {
+              id: '6s1',
+              text: 'Alimentazione',
+              link: 'http://news.abc24.it/notizie/alimentazione',
+              path: 'alimentazione',
+            },
+            {
+              id: '6s2',
+              text: 'Medicina',
+              link: 'http://news.abc24.it/notizie/medicina',
+              path: 'medicina',
+            },
+            {
+              id: '6s3',
+              text: 'Salute e Benessere',
+              link: 'http://news.abc24.it/notizie/salute-e-benessere',
+              path: 'salute-e-benessere',
+            },
+          ],
+        },
+        {
+          id: '7',
+          text: 'Scienza',
+          link: 'http://news.abc24.it/notizie/scienza-e-tecnologia',
+
+          path: 'scienza-e-tecnologia',
+          open: false,
+          submenuItems: [
+            {
+              id: '7s1',
+              text: 'Animali e Natura ',
+              link: 'http://news.abc24.it/notizie/animali-e-natura',
+              path: 'animali-e-natura',
+            },
+            {
+              id: '7s2',
+              text: 'Cellulari e Telefonia ',
+              link: 'http://news.abc24.it/notizie/cellulari-e-telefonia',
+              path: 'cellulari-e-telefonia',
+            },
+            {
+              id: '7s3',
+              text: 'Informatica',
+              link: 'http://news.abc24.it/notizie/informatica',
+              path: 'informatica',
+            },
+            {
+              id: '7s4',
+              text: 'Internet',
+              link: 'http://news.abc24.it/notizie/internet',
+              path: 'internet',
+            },
+            {
+              id: '7s5',
+              text: 'Tecnologia',
+              link: 'http://news.abc24.it/notizie/tecnologia',
+              path: 'tecnologia',
+            },
+          ],
+        },
+        {
+          id: '8',
+          text: 'Servizi',
+          link: 'http://news.abc24.it/notizie/servizi',
+
+          path: 'servizi',
+          open: false,
+          submenuItems: [
+            {
+              id: '8s1',
+              text: 'Biglietti Eventi',
+              link: 'http://news.abc24.it/notizie/biglietti-eventi',
+              path: 'biglietti-eventi',
+            },
+            {
+              id: '8s2',
+              text: 'Pubblica amministrazione',
+              link: 'http://news.abc24.it/notizie/pubblica-amministrazione',
+              path: 'pubblica-amministrazione',
+            },
+            {
+              id: '8s3',
+              text: 'Utilità',
+              link: 'http://news.abc24.it/notizie/utilita',
+              path: 'utilita',
+            },
+          ],
+        },
+        {
+          id: '9',
+          text: 'Sport',
+          link: 'http://news.abc24.it/notizie/sport',
+
+          path: 'sport',
+          open: false,
+          submenuItems: [
+            {
+              id: '9s1',
+              text: 'Atletic',
+              link: 'http://news.abc24.it/notizie/atletica',
+              path: 'atletica',
+            },
+            {
+              id: '9s2',
+              text: 'Calcio',
+              link: 'http://news.abc24.it/notizie/calcio',
+              path: 'calcio',
+            },
+            {
+              id: '9s3',
+              text: 'Formula ',
+              link: 'http://news.abc24.it/notizie/formula-1',
+              path: 'formula-1',
+            },
+            {
+              id: '9s4',
+              text: 'Moto G',
+              link: 'http://news.abc24.it/notizie/moto-gp',
+              path: 'moto-gp',
+            },
+            {
+              id: '9s5',
+              text: 'Pallacanestro',
+              link: 'http://news.abc24.it/notizie/pallacanestro',
+              path: 'pallacanestro',
+            },
+            {
+              id: '9s6',
+              text: 'Pallavolo',
+              link: 'http://news.abc24.it/notizie/pallavolo',
+              path: 'pallavolo',
+            },
+            {
+              id: '9s7',
+              text: 'Ciclismo',
+              link: 'http://news.abc24.it/notizie/ciclismo',
+              path: 'ciclismo',
+            },
+            {
+              id: '9s8',
+              text: 'Nuoto',
+              link: 'http://news.abc24.it/notizie/nuoto',
+              path: 'nuoto',
+            },
+            {
+              id: '9s9',
+              text: 'Tennis',
+              link: 'http://news.abc24.it/notizie/tennis',
+              path: 'tennis',
+            },
+            {
+              id: '9s10',
+              text: 'Pesca',
+              link: 'http://news.abc24.it/notizie/pesca',
+              path: 'pesca',
+            },
+          ],
+        },
+        {
+          id: '10',
+          text: 'Turismo',
+          link: 'http://news.abc24.it/notizie/turismo',
+
+          path: 'turismo',
+          open: false,
+          submenuItems: [
+            {
+              id: '10s1',
+              text: 'Eventi',
+              link: 'http://news.abc24.it/notizie/eventi',
+              path: 'eventi',
+            },
+            {
+              id: '10s2',
+              text: 'Agriturismi',
+              link: 'http://news.abc24.it/notizie/agriturismi',
+              path: 'agriturismi',
+            },
+            {
+              id: '10s3',
+              text: 'Diari di Viaggio',
+              link: 'http://news.abc24.it/notizie/diari-di-viaggio',
+              path: 'diari-di-viaggio',
+            },
+            {
+              id: '10s4',
+              text: 'Hotel',
+              link: 'http://news.abc24.it/notizie/hotel',
+              path: 'hotel',
+            },
+          ],
+        },
+      ]
+
+      function findMenu(path) {
+        var menu = ''
+        for (menuItem of menuItems) {
+          if (path === menuItem.path) {
+            menu = path
+            if (menu !== '') break
+          } else {
+            for (submenuItem in menuItem.submenuItems) {
+              if (path === submenuItem.path) {
+                menu = path
+                if (menu !== '') break
+              }
+            }
+          }
+        }
+        return menu
+      }
+    </script>
   </body>
 </html>
