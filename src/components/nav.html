@@ -39,7 +39,7 @@
     <!-- Logo and menu container -->
 
     <div
-      x-data="{ menuOpen: false, currentMenu: '', currentSubmenu:location.pathname.split('/').slice(-1)[0], menuFromRoute: findMenu(location.pathname.split('/').slice(-1)[0]), menuItems:menuItems, userMenuItems: userMenuItems}"
+      x-data="{ menuOpen: false, currentMenu: findMenu(location.pathname.split('/').slice(-1)[0]), currentSubmenu:location.pathname.split('/').slice(-1)[0], menuFromRoute: findMenu(location.pathname.split('/').slice(-1)[0]), menuItems:menuItems, userMenuItems: userMenuItems}"
       class="w-full h-full flex flex-wrap items-center bg-gradient-to-b from-blue-700 to-blue-800 lg:py-0 py-2 px-6 lg:px-0"
     >
       <!-- Logo, ad, hamburger -->
