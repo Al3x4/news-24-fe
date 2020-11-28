@@ -23,15 +23,18 @@
   </head>
   <body class="antialiased bg-gray-200">
     <%= require('html-loader!./components/nav.html') %>
+
     <section id="info" class="w-screen bg-gray-400 text-gray-600 p-8 mb-16">
       <div class="max-w-6xl mx-auto">
-        Sito di news libero e gratis, guadagnare online con il sistema adsense
-        share, sito web dove puoi segnalare notizie, articoli e siti internet
-        con il link diretto al Tuo sito o blog senza la funzione (no follow)
-        quindi Adsense Sharing + link popularity ISCRIVITI SUBITO! Il nuovo blog
-        dedicato ai casino online Trova tutte le novità e le notizie sui casino
-        online. I giochi casino più belli, le strategie vincenti e i bonus
-        migliori. Dedicato ai casino online in Italia, in Europa e nel mondo.
+        <%= require('html-loader!./components/socialIcons.html') %> <%=
+        require('html-loader!./components/flashNotice.html') %> Sito di news
+        libero e gratis, guadagnare online con il sistema adsense share, sito
+        web dove puoi segnalare notizie, articoli e siti internet con il link
+        diretto al Tuo sito o blog senza la funzione (no follow) quindi Adsense
+        Sharing + link popularity ISCRIVITI SUBITO! Il nuovo blog dedicato ai
+        casino online Trova tutte le novità e le notizie sui casino online. I
+        giochi casino più belli, le strategie vincenti e i bonus migliori.
+        Dedicato ai casino online in Italia, in Europa e nel mondo.
         <div
           id="mini-sponsored"
           class="hidden md:flex items-center justify-around pt-4 w-full"
@@ -236,6 +239,7 @@
         </aside>
       </div>
     </main>
+    <%= require('html-loader!./components/footer.html') %>
     <script>
       const userMenuItems = [
         {

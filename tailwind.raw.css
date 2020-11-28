@@ -11,6 +11,9 @@
   button {
     @apply transition duration-200 ease-out;
   }
+  h1 {
+    @apply text-3xl w-full border-b-2 border-orange-500;
+  }
 }
 
 @layer components {
@@ -35,5 +38,8 @@
   .button-main:focus,
   .input-main:focus {
     @apply outline-none shadow-outline;
+  }
+  .help-text {
+    @apply text-xs text-gray-600;
   }
 }

@@ -74,6 +74,9 @@ module.exports = {
       fontFamily: {
         body: ['Ubuntu'],
       },
+      inset: {
+        '1/2': '50%',
+      },
       maxWidth: {
         10: '2.5rem',
         12: '3rem',
