@@ -113,7 +113,7 @@
                 <template x-if="menuItem.text==='Home'">
                   <div class="w-full relative">
                     <a
-                      class="border-b-4 border-transparent hover:border-orange-500 focus:border-orange-500 flex items-center w-full p-5  border-orange-500"
+                      class="border-b-4 border-transparent hover:border-orange-500 focus:border-orange-500 flex items-center w-full p-5 "
                     >
                       <svg
                         fill="currentColor"
@@ -135,6 +135,7 @@
                   >
                     <button
                       @click="menuItem.open = !menuItem.open"
+                      :class="{'border-orange-500 font-black': menuItem.path==currentMenu}"
                       class="outline-none focus:outline-none border-b-4 border-transparent  hover:border-orange-500 focus:border-orange-500  flex items-center w-full px-3"
                     >
                       <span
