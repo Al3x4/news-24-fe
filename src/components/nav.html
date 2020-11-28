@@ -113,7 +113,8 @@
                 <template x-if="menuItem.text==='Home'">
                   <div class="w-full relative">
                     <a
-                      class="border-b-4 border-transparent hover:border-orange-500 focus:border-orange-500 flex items-center w-full p-5 "
+                      :class="{'border-orange-500 font-black': menuItem.path==currentMenu}"
+                      class="border-b-4 border-transparent hover:border-orange-500 focus:border-orange-500 flex items-center w-full p-5  pb-4"
                     >
                       <svg
                         fill="currentColor"
